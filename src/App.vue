@@ -29,4 +29,8 @@ export default {
   color: #c00;
 }
 
+.gray {
+  color: #999;
+}
+
 </style>

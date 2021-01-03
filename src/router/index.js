@@ -28,10 +28,28 @@ const routes = [
     path: '/forget',
     name: 'Forget',
     component: () => import('../views/Forget.vue')
+  },
+  {
+    path: '/',
+    name: '',
+    component: () => import('../views/Home.vue'),
+    children: [
+      {
+        path: '',
+        name: 'Index',
+        component: () => import('../views/channels/Index.vue')
+      },
+      {
+        path: '/index/:catalog',
+        name: 'Catalog',
+        component: () => import('../views/channels/Template1.vue')
+      }
+    ]
   }
 ]
 
 const router = new VueRouter({
+  linkExactActiveClass: 'layui-this',
   routes
 })
 
